@@ -1,0 +1,213 @@
+@charset "UTF-8"
+/*Couleur-jaune-moutarde: #deb853 */
+/* color-txt bleu vintage: rgba(10, 55, 58, 1); */
+
+body, html {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+}
+.container-fluid{
+    padding: 0px;
+    margin: auto;
+}
+
+a, a:hover {
+    text-decoration: none;
+}
+.row{
+    margin: 0;
+}
+
+/* HEADER*/
+.header {
+    background-color: #deb853;
+    height: 80px;
+    line-height: 70px;
+}
+.logo {
+    color: rgba(10, 55, 58, 1);
+    font-weight: bold;
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-left: 15px;
+    float: left;
+}
+.logo:hover {
+    color: #c8d0df;
+}
+.menu {
+    float: right;
+}
+
+.menu a {
+    color: rgba(10, 55, 58, 1);
+    margin-right: 20px;
+}
+.menu a:hover{
+    color: #c8d0df;
+}
+
+.menu i {
+    font-size: 20px;
+    color: rgba(10, 55, 58, 1);
+}
+
+
+
+/* Bannière */
+
+.banner{
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 30px;
+}
+
+.ban{
+    width: 100%;
+    max-width: 100%;
+    position: relative;
+}
+.ban img {
+    width: 100%;
+    max-width: 100%;
+}
+
+.inner-banner{
+    position: absolute;
+    top: 30%;
+    width: 100%;
+    text-align: center;   
+}
+.inner-banner h1{
+    color: #ffffff;
+    text-shadow: 1px 1px 40px #000000;
+}
+.inner-banner h1{
+    font-size: 44px;
+}
+.inner-banner p{
+    color: #ffffff;
+    font-size: 16px;
+    margin-top: -30px;
+}
+
+.btn{
+    background-color: #deb853;
+    color: rgba(10, 55, 58, 1);
+    font-size: 20px;
+
+
+    padding: 10px 10px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+
+
+    border: none;
+    text-align: center;
+    text-decoration: none;
+}
+.btn-shop:hover {
+    padding: 10px 33px;
+
+    background: url(../img/shop.png) no-repeat;
+    background-position: right;
+    background-color: #deb853;
+    color: rgba(10, 55, 58, 1);
+
+    transition-property: padding;
+    transition-duration: .5s;
+    transition-timing-function: ease-in-out;
+    opacity: O.5;
+}
+.btn-shopping:hover {
+    padding: 10px 30px;
+
+    background: url(../img/shopping-bag.png) no-repeat;
+    background-position: right;
+    background-color: #deb853;
+
+    transition-property: padding;
+    transition-duration: .5s;
+    transition-timing-function: ease-in-out;
+    opacity: O.5;
+}
+
+
+/*--PRODUIT--*/
+
+.ligne-separatrice {
+    width: 30%;
+    height: 5px;
+    border: none;
+    box-shadow: none;
+    background-color: #deb853;
+}
+
+article {
+    text-align: center;
+    margin-top: 40px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+    
+    transform: scale(1);
+    transition: transform 500ms ease-in-out;
+}
+article:hover{
+    transform: scale(1.03);
+
+}
+
+.produit {
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.bloc-produit{
+    width: auto;
+}
+
+.bloc-produit p{
+    color: #000000;
+}
+#productInfos{
+    display: flex;
+}
+
+article span{
+    display: block;
+    color: #deb853;
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+article img{
+    width: ;
+    max-width: 100%;
+    height: auto;
+}
+
+
+/*-- FOOTER --*/
+footer{
+    background-color: #deb853;
+    color: rgba(10, 55, 58, 1);
+    height: 80px;
+    text-align: center;
+}
+
+
+@media only screen and (min-width: 768){
+
+
+}
+
