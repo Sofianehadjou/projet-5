@@ -11,42 +11,44 @@ let productDescription = document.querySelector('#productDescription p');
 let productLenses = document.querySelector('#productLenses p');
 //créer la div IMG:
 var productImages = document.getElementById('productImages')
-var productImg = document.createElement("img");
+//créer la variable pour l' Url d'api
+var requestURL = 'http://localhost:3000/api/cameras';
+
 
 
 let products = document.getElementById('products');
 
 
 //recuperer les données de l'API:
-var request = new XMLHttpRequest();
-
+var request = new XMLHttpRequest();   //Lig on crée un nouvel objet qui correspond à notre objet AJAX. C'est grâce à lui qu'on va créer et envoyer notre requête ;
 request.onreadystatechange = function() {
-    if (this.readyState == XMLHttpRequest.DONE) {
+    if (this.readyState == XMLHttpRequest.DONE && this.status == 200) {
         var response =JSON.parse(this.responseText);
        for( let i = 0; i < response.length; i++){
            let article = response[i];
+           
 // Ajouter le contenu au DOM
            products.innerHTML = `<article>
                 <div id="productInfos">
                     <div class="bloc-produit">
                         <p id="productId"></p>
-                        <h2 id="productName"><strong>Nom: </strong>${article.name}</h2>
-                        <p id="productPrice"><strong>Prix: </strong> ${article.price/100} €</p>
-                        <p id="productDescription"><strong>Description: </strong> ${article.description}</p>
-                        <p id="productLenses"><strong>Lenses: </strong> ${article.lenses}</p>
+                        <h2 id="productName"><strong>Nom: </strong>${response[i].name}</h2>
+                        <p id="productPrice"><strong>Prix: </strong> ${response[i].price/100} €</p>
+                        <p id="productDescription"><strong>Description: </strong> ${response[i].description}</p>
+                        <p id="productLenses"><strong>Lenses: </strong> ${response[i].lenses}</p>
                     </div>
                     <div> 
-                        <img id="ProductImg" src="${article.imageUrl}" alt="">
+                        <img id="ProductImg" src="${response[i].imageUrl}" alt="">
                     </div>
                 </div>
-                <a class="btn btn-shopping" href="produit.html?id=${article._id}" aria-label="Sélectionner un article ${article.name}">Sélectionner</a>
-            </article>`;
-      
+                <a class="btn btn-shopping" href="produit.html?id=${response[i]._id}" aria-label="Sélectionner un article ${response[i].name}">Sélectionner</a>
+            </article>`;      
        }
     }
 }
 
-request.open("GET", "http://localhost:3000/api/cameras");
+request.open("GET", requestURL);
 request.send();
+
 
 
