@@ -6,7 +6,7 @@
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/40649c36d5.js" crossorigin="anonymous"></script>
-    <script src="/js/app.js" defer></script>
+    <script src="/js/panier.js" defer></script>
 
 
 
@@ -34,21 +34,47 @@
     
     <!-- Produit -->
     <main>
-        <h2>Votre Panier</h2>
-        <article>
+        <div id="productUnit" class="product">
+            <article class="article-product"></article>
+            <li class="articles__lists--item cards__item">
+                <div class="cards__item__thumb">
+                    <img class="cards__item__thumb--img" src="${response[i].imageUrl}" alt="Appareil photo vintage ${response[i].imageUrl}}" width="300">
+                </div>
+                <div class="cards__item__body">
+                    <h3 class="cards__item__body--title">Appareil photo vintage ${response[i].name}</h3>
+                    <p class="cards__item__body--name"><strong>Marque : </strong>${response[i].name}</p>
+                    <p class="cards__item__body--lenses"><strong>Lentilles : </strong>${response[i].lenses}</p>
+                    <P class="cards__item__body--description"><strong>Description : </strong>${response[i].description}...</P>
+                    <p class="cards__item__body--price"><strong>Prix : </strong>${response[i].price / 100}€</p>
+    
+                    <div class="cards__item__form">
+                        <a class="btn" href="produit.html?id=${response[i]._id}" aria-label="Sélectionner l’appareil photo vintage ${response[i].name}">Sélectionner</a>
+                    </div>
+                </div>
+            </li>
+                    
+            </div> 
+        <table class="table">
+            
+        </table>
+        
+        <p>Sous total : <span class="subtotal"></span>€</p>
+        
+        <button id="confirm-command">Passer la commande</button>
+        <div>
             <p>Informartions:</p>
             <form action="" method="get" class="form-example">
                 <div class="form-example">
-                  <label for="name">nom: </label>
-                  <input type="text" name="familyname" id="familyname" required>
+                    <label for="name">nom: </label>
+                    <input type="text" name="familyname" id="familyname" required>
                 </div>
                 <div class="form-example">
                     <label for="name">prénom: </label>
                     <input type="text" name="lastname" id="lastname" required>
-                  </div>
+                    </div>
                 <div class="form-example">
-                  <label for="email">Adresse mail: </label>
-                  <input type="email" name="email" id="email" required>
+                    <label for="email">Adresse mail: </label>
+                    <input type="email" name="email" id="email" required>
                 </div>
                 <div class="form-example">
                     <label for="phone">Téléphone: </label>
@@ -72,15 +98,12 @@
                 </div>
                 <button type="submit" aria-label="">Acheter</button>
             </form>    
-        </article>
+        </div>
     </main>
 
     <!-- FOOTER-->
     <footer class="footer">
-        <p>Orinco.fr| Vente d'appareils photos vintage <br>Copyright © 2020 Tous droits réservés.</p>
-        
-    </footer>
-
-        
+      <p>Orinco.fr| Vente d'appareils photos vintage <br>Copyright © 2020 Tous droits réservés.</p>
+    </footer>   
 </body>
 </html>

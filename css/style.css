@@ -150,7 +150,7 @@ a, a:hover {
     background-color: #deb853;
 }
 
-article {
+.article {
     text-align: center;
     margin-top: 40px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
@@ -162,9 +162,23 @@ article {
     transform: scale(1);
     transition: transform 500ms ease-in-out;
 }
-article:hover{
-    transform: scale(1.03);
+.article:hover{
+    transform: scale(1.01);
+}
 
+.article-product{
+    text-align: center;
+    margin-top: 40px;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+    
+}
+
+.productUnit{
+    display: flex;
+    flex-direction: column-reverse;
 }
 
 .produit {
@@ -194,6 +208,7 @@ article img{
     width: 50% ;
     max-width: 100%;
     height: auto;
+    
 }
 
 
