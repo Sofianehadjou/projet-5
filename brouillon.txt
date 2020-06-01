@@ -1,0 +1,220 @@
+
+    productName.innerHTML = "Nom: " + article.name;
+    productPrice.innerHTML = "prix: " + article.price;
+    productDescription.innerHTML = "Description: " + article.description;
+    productLenses.innerHTML ="Lenses: " + article.lenses;
+    productId.innerHTML = "ID: " + article._id;
+    productImg.src = article.imageUrl;
+    productImage.appendChild(productImg);
+
+    console.log(article.imageUrl);
+
+
+
+    //appeler l'élement produit:
+let productId =document.querySelector('#productId p')
+//appeler le titre du produit:
+let productName = document.querySelector('#productName h2')
+//appeler la div prix: 
+let productPrice = document.querySelector('#productPrice  p');
+//appeler la div description:
+let productDescription = document.querySelector('#productDescription p');
+//Appeler la div Lenses:
+let productLenses = document.querySelector('#productLenses p');
+//créer la div IMG:
+let productImages = document.getElementById('productImages')
+
+
+    <a class="btn" href="produit.html?id=${data[i]._id}" aria-label="Sélectionner l’appareil photo vintage ${
+        data[i].name
+      }">Sélectionner</a>
+        </a>
+        
+
+
+
+        <h2>Votre Panier</h2>
+        <article>
+            <p>Informartions:</p>
+            <form action="" method="get" class="form-example">
+                <div class="form-example">
+                  <label for="name">nom: </label>
+                  <input type="text" name="familyname" id="familyname" required>
+                </div>
+                <div class="form-example">
+                    <label for="name">prénom: </label>
+                    <input type="text" name="lastname" id="lastname" required>
+                  </div>
+                <div class="form-example">
+                  <label for="email">Adresse mail: </label>
+                  <input type="email" name="email" id="email" required>
+                </div>
+                <div class="form-example">
+                    <label for="phone">Téléphone: </label>
+                    <input type="tel" name="number" id="phone" required>
+                </div>
+                <div class="form-example">
+                    <label for="Adresse">Votre adresse: </label>
+                    <input type="text" name="adresse" id="adresse" required>
+                </div>
+                <div class="form-example">
+                    <label for="zip">Code postal: </label>
+                    <input type="number" name="zip" id="zip" required>
+                </div>
+                <div class="form-example">
+                    <label for="city">Ville: </label>
+                    <input type="text" name="ville" id="ville" required>
+                </div>
+                <div class="form-example">
+                    <label for="contry">pays: </label>
+                    <input type="text" name="pays" id="pays" required>
+                </div>
+                <button type="submit" aria-label="">Acheter</button>
+            </form>    
+        </article>
+
+
+
+
+        004028338548 N COMPTE
+
+        6014982123 CLIENT
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        import { article.js } from "/Users/33760/Desktop/projet-5/js";
+
+// variables pour stocker le nombre d'articles et leurs noms
+var inCartItemsNum;
+var cartArticles;
+
+// affiche/cache les éléments du panier selon s'il contient des produits
+function cartEmptyToggle() {
+    if (inCartItemsNum > 0) {
+        $('#cart-dropdown .hidden').removeClass('hidden');
+        $('#empty-cart-msg').hide();
+    }
+
+    else {
+        $('#cart-dropdown .go-to-cart').addClass('hidden');
+        $('#empty-cart-msg').show();
+    }
+}
+
+// récupère les informations stockées dans les cookies
+inCartItemsNum = parseInt(getCookie('inCartItemsNum') ? getCookie('inCartItemsNum') : 0);
+cartArticles = getCookie('cartArticles') ? JSON.parse(getCookie('cartArticles')) : [];
+
+cartEmptyToggle();
+
+// affiche le nombre d'article du panier dans le widget
+$('#in-cart-items-num').html(inCartItemsNum);
+
+// hydrate le panier
+var items = '';
+cartArticles.forEach(function(v) {
+   items += '<li id="'+ v.id +'"><a href="'+ v.url +'">'+ v.name +'<br><small>Quantité : <span class="qt">'+ v.qt +'</span></small></a></li>';
+});
+
+$('#cart-dropdown').prepend(items);
+
+
+
+
+// click bouton ajout panier
+$('.add-to-cart').click(function() {
+
+    // récupération des infos du produit
+    var $this = $(this);
+    var id = $this.attr(response[i]._id);
+    var name = $this.attr(response[i]._name);
+    var price = $this.attr(response[i]._price);
+    var url = $this.attr('data-url');
+    inCartItemsNum += qt;
+
+    // mise à jour du nombre de produit dans le widget
+    $('#in-cart-items-num').html(inCartItemsNum);
+
+    var newArticle = true;
+
+    // vérifie si l'article est pas déjà dans le panier
+    cartArticles.forEach(function(v) {
+        // si l'article est déjà présent, on incrémente la quantité
+        if (v.id == id) {
+            newArticle = false;
+            v.qt += qt;
+            $('#'+ id).html('<a href="'+ url +'">'+ name +'<br><small>Quantité : <span class="qt">'+ v.qt +'</span></small></a>');
+        }
+    });
+
+    // s'il est nouveau, on l'ajoute
+    if (newArticle) {
+        $('#cart-dropdown').prepend('<li id="'+ id +'"><a href="'+ url +'">'+ name +'<br><small>Quantité : <span class="qt">'+ qt +'</span></small></a></li>');
+
+        cartArticles.push({
+            id: id,
+            name: name,
+            price: price,
+            weight: weight,
+            qt: qt,
+            url: url
+        });
+    }
+
+    // sauvegarde le panier
+    saveCart(inCartItemsNum, cartArticles);
+
+    // affiche le contenu du panier si c'est le premier article
+    cartEmptyToggle();
+});
+
+
+
+
+
+var request = new XMLHttpRequest();   //Lig on crée un nouvel objet qui correspond à notre objet AJAX. C'est grâce à lui qu'on va créer et envoyer notre requête ;
+request.onreadystatechange = function() {
+    if (this.readyState == XMLHttpRequest.DONE && this.status == 200) {
+        var response =JSON.parse(this.responseText);
+       for( let i = 0; i < response.length; i++) {
+           let article = response[i]; 
+
+        productUnit.innerHTML = `<li class="articles__lists--item cards__item">
+            <div class="cards__item__thumb">
+                <img class="cards__item__thumb--img" src="${response[i].imageUrl}" alt="Appareil photo vintage ${response[i].imageUrl}}" width="300">
+            </div>
+            <div class="cards__item__body">
+                <h3 class="cards__item__body--title">Appareil photo vintage ${response[i].name}</h3>
+                <p class="cards__item__body--name"><strong>Marque : </strong>${response[i].name}</p>
+                <p class="cards__item__body--lenses"><strong>Lentilles : </strong>${response[i].lenses}</p>
+                <P class="cards__item__body--description"><strong>Description : </strong>${response[i].description}...</P>
+                <p class="cards__item__body--price"><strong>Prix : </strong>${response[i].price / 100}€</p>
+
+                <div class="cards__item__form">
+                    <a class="btn" href="produit.html?id=${response[i]._id}" aria-label="Sélectionner l’appareil photo vintage ${response[i].name}">Sélectionner</a>
+                </div>
+            </div>
+        </li>`;
+        }
+    }
+}
+
+request.open("GET", requestURL);
+request.send();

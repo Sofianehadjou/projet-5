@@ -6,9 +6,7 @@
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/40649c36d5.js" crossorigin="anonymous"></script>
-    <script src="/js/panier.js" defer></script>
-
-
+    <script type="module" src="/js/panier.js" defer></script>
 
 
     <title>Vente d'appareils photos vintage | Orinco.fr</title>
@@ -33,29 +31,35 @@
     </header>
     
     <!-- Produit -->
-    <main>
-        <div id="productUnit" class="product">
+    <main class="main-panier">
+        <section>
+            <div id="productUnit" class="product">
             <article class="article-product"></article>
-            <li class="articles__lists--item cards__item">
-                <div class="cards__item__thumb">
-                    <img class="cards__item__thumb--img" src="${response[i].imageUrl}" alt="Appareil photo vintage ${response[i].imageUrl}}" width="300">
-                </div>
-                <div class="cards__item__body">
-                    <h3 class="cards__item__body--title">Appareil photo vintage ${response[i].name}</h3>
-                    <p class="cards__item__body--name"><strong>Marque : </strong>${response[i].name}</p>
-                    <p class="cards__item__body--lenses"><strong>Lentilles : </strong>${response[i].lenses}</p>
-                    <P class="cards__item__body--description"><strong>Description : </strong>${response[i].description}...</P>
-                    <p class="cards__item__body--price"><strong>Prix : </strong>${response[i].price / 100}€</p>
-    
-                    <div class="cards__item__form">
-                        <a class="btn" href="produit.html?id=${response[i]._id}" aria-label="Sélectionner l’appareil photo vintage ${response[i].name}">Sélectionner</a>
-                    </div>
-                </div>
-            </li>
-                    
+                <a id="btnBasket" class="btn btn-shopping" href="#" aria-label="">Sélectionner</a>    
             </div> 
-        <table class="table">
+        </section>
+        
+        <div id="productUnit" class="product">
+            <article id="articlebasket">
             
+            </article>
+                    
+        </div> 
+        <table id="panier">
+            <thead>
+                <tr id="panier__commande">
+                    <td id="name">Désignation</td>
+                    <td id="price">Prix</td>
+                    <td id="color">Couleur</td>
+                    <td id="quantity">Quantité</td>
+                    <td id="totalPrice">Prix Total</td>
+                    <td id="deleteProduct">Supprimer la ligne</td>
+                </tr>
+            </thead>
+            <tbody id="panier__body">
+            </tbody>
+            <tfoot id="prix__total">
+            </tfoot>
         </table>
         
         <p>Sous total : <span class="subtotal"></span>€</p>

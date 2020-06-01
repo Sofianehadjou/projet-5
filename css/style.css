@@ -139,6 +139,12 @@ a, a:hover {
     opacity: O.5;
 }
 
+/*--Main--*/
+.main-panier{
+    margin: auto;
+    text-align: center;
+}
+
 
 /*--PRODUIT--*/
 
