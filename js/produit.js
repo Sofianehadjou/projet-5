@@ -1,6 +1,6 @@
 //créer la variable pour l' Url d'api
 let requestURL = 'http://localhost:3000/api/cameras/' + window.location.search.substr(1).split("=")[1];
-
+//récupération des éléments du DOM.
 const products = document.getElementById('products');
 const productUnit = document.getElementById('productUnit');
 const buttonAchat = document.getElementById('buttonAchat');
@@ -50,8 +50,10 @@ request.onreadystatechange = function() {
 
         const submitBtn = document.getElementById('btnBasket');
 
-        submitBtn.addEventListener("click", function (event) {
-            Console.log("a été cliqué ajouté au panier");
+        submitBtn.addEventListener('click', function (event) {
+            alert ("votre produit a été ajouter au panier");
+            event.preventDefault();
+
             const cart = {
                 name: name.innerText,
                 _id: id.innerText,                     
@@ -62,13 +64,5 @@ request.onreadystatechange = function() {
             const stringOrder = JSON.stringify(order)      // On transforme cet objet en chaine de caractère
         localStorage.setItem("newOrder", stringOrder) // Qu'on va stocker dans le "session storage" du navigateur et qu'on nomme "newOrder"
         }) 
-        
-
-
-
     };  
 };
-
-
-
-
