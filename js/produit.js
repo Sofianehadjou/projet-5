@@ -3,14 +3,13 @@ let requestURL = 'http://localhost:3000/api/cameras/' + window.location.search.s
 //récupération des éléments du DOM.
 const products = document.getElementById('products');
 const productUnit = document.getElementById('productUnit');
-const buttonAchat = document.getElementById('buttonAchat');
 const lenseSelect = document.getElementsByClassName('lenseSelect');
 const quantite = document.getElementsByClassName('qte');
 const name = document.getElementsByClassName('productName');
 const price = document.getElementsByClassName('productPrice');
 const description = document.getElementsByClassName('productDescription');
 
-
+var article = undefined;
 
 //recuperer les données de l'API:
 var request = new XMLHttpRequest();   //Lig on crée un nouvel objet qui correspond à notre objet AJAX. C'est grâce à lui qu'on va créer et envoyer notre requête ;
@@ -19,7 +18,7 @@ request.send();
 
 request.onreadystatechange = function() {
     if (this.readyState == XMLHttpRequest.DONE && this.status == 200) {
-        var article =JSON.parse(this.responseText);
+        article =JSON.parse(this.responseText);
                
 // Ajouter le contenu au DOM:
         name.innerHTML = ``;
@@ -32,6 +31,8 @@ request.onreadystatechange = function() {
                     <p class="productDescription"><strong>Description: </strong> ${article.description}</p>
                     <p class="productLenses"><strong>Lenses: </strong> ${article.lenses}</p>
                     <p id="productId"><strong>Id: </strong> ${article._id}</p>
+                    <p id="productQte"><strong>Quantité: </strong> </p>
+
 
                         <form id="buttonAchat" action="">
                         <label class="card__form--label" for="lenses"><strong>Choisir une lentilles : </strong> </label>
@@ -40,7 +41,6 @@ request.onreadystatechange = function() {
                         </select>
                         </form>
                         <a id="btnBasket" class="btn btn-shopping" href="" aria-label="">Sélectionner</a>
-
                 </div>
                 <div>
                     <img id="ProductImg" src="${article.imageUrl}" alt="">
@@ -49,20 +49,29 @@ request.onreadystatechange = function() {
         </article>`; 
 
         const submitBtn = document.getElementById('btnBasket');
+        const id = document.getElementById('productId');
+        const lense = document.getElementsByClassName('productLenses');
+        const Qte = document.getElementById('productQte');
 
-        submitBtn.addEventListener('click', function (event) {
-            alert ("votre produit a été ajouter au panier");
-            event.preventDefault();
+        submitBtn.addEventListener('click', function (event) {    // écoute de l'événement click, notre callback prend un paramètre que nous avons appelé event ici
+            event.preventDefault(); // On utilise la fonction preventDefault de notre objet event pour empêcher le comportement par défaut de cet élément lors du clic de la souris
+            alert('${myArticle.name} a été bien ajouter au panier ')
 
-            const cart = {
-                name: name.innerText,
-                _id: id.innerText,                     
-                lense: lense.value,          
-                qte: qte.value,   
-            }    
+            let cart = localStorage.getItem('panier');
+            if (cart) {
+                cart = JSON.parse(cart);
+            } else {
+                cart = [];
+            }
+    
+            cart.push(article);
+            localStorage.setItem("panier", JSON.stringify(cart));
             
-            const stringOrder = JSON.stringify(order)      // On transforme cet objet en chaine de caractère
-        localStorage.setItem("newOrder", stringOrder) // Qu'on va stocker dans le "session storage" du navigateur et qu'on nomme "newOrder"
+            if (cart != null) {
+                let myArticleJSON = localStorage.getItem("panier");
+                console.log(myArticle);
+              }            
+        
         }) 
     };  
 };

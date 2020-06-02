@@ -17,7 +17,8 @@ request.onreadystatechange = function() {
         var response =JSON.parse(this.responseText);
        for( let i = 0; i < response.length; i++) {
            let article = response[i]; 
-           
+           console.log(article);
+
 // Ajouter le contenu au DOM:
             products.innerHTML += `<article class="article">
                 <div id="productInfos">
