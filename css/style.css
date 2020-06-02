@@ -227,6 +227,31 @@ footer{
 }
 
 
+
+
+
+
+
+/*-- page panier --*/
+table {
+    margin: 50px;
+    text-align: ;
+    border-collapse: collapse;
+}
+td {
+    border: solid 1px black;
+}
+
+
+
+
+
+
+
+
+
+
+
 @media only screen and (min-width: 768){
 
 

@@ -22,61 +22,52 @@ request.onreadystatechange = function() {
         var article =JSON.parse(this.responseText);
                
 // Ajouter le contenu au DOM:
-            productUnit.innerHTML = `<article class="article-product">
-                <div class="productInfos productUnit">
-                    <div id="bloc-produit">
-                        <p class="productId"></p>
-                        <h2 class="productName"><strong>Nom: </strong>${article.name}</h2>
-                        <p class="productPrice"><strong>Prix: </strong> ${article.price/100} €</p>
-                        <p class="productDescription"><strong>Description: </strong> ${article.description}</p>
-                        <p class="productLenses"><strong>Lenses: </strong> ${article.lenses}</p>
-                         <form id="buttonAchat" action="">
-                            <label class="card__form--label" for="lenses"><strong>Choisir une lentilles : </strong> </label>
-                            <select id="lenses" class="card__form__select js-lensesSelectAllOption" aria-label="Sélectionner la lentille de votre choix">
-                                <option class="lenseSelect" value="">${article.lenses}</option>
-                            </select>
-                          </form>
-                          <a id="btnBasket" class="btn btn-shopping" href="" aria-label="">Sélectionner</a>
+        name.innerHTML = ``;
+        productUnit.innerHTML = `<article class="article-product">
+            <div class="productInfos productUnit">
+                <div id="bloc-produit">
+                    <p class="productId"></p>
+                    <h2 class="productName"><strong>Nom: </strong>${article.name}</h2>
+                    <p class="productPrice"><strong>Prix: </strong> ${article.price/100} €</p>
+                    <p class="productDescription"><strong>Description: </strong> ${article.description}</p>
+                    <p class="productLenses"><strong>Lenses: </strong> ${article.lenses}</p>
+                    <p id="productId"><strong>Id: </strong> ${article._id}</p>
 
-                    </div>
-                    <div>
-                        <img id="ProductImg" src="${article.imageUrl}" alt="">
-                    </div>
+                        <form id="buttonAchat" action="">
+                        <label class="card__form--label" for="lenses"><strong>Choisir une lentilles : </strong> </label>
+                        <select id="lenses" class="card__form__select js-lensesSelectAllOption" aria-label="Sélectionner la lentille de votre choix">
+                            <option class="lenseSelect" value="">${article.lenses}</option>
+                        </select>
+                        </form>
+                        <a id="btnBasket" class="btn btn-shopping" href="" aria-label="">Sélectionner</a>
+
                 </div>
-            </article>`; 
+                <div>
+                    <img id="ProductImg" src="${article.imageUrl}" alt="">
+                </div>
+            </div>
+        </article>`; 
+
+        const submitBtn = document.getElementById('btnBasket');
+
+        submitBtn.addEventListener("click", function (event) {
+            Console.log("a été cliqué ajouté au panier");
+            const cart = {
+                name: name.innerText,
+                _id: id.innerText,                     
+                lense: lense.value,          
+                qte: qte.value,   
+            }    
+            
+            const stringOrder = JSON.stringify(order)      // On transforme cet objet en chaine de caractère
+        localStorage.setItem("newOrder", stringOrder) // Qu'on va stocker dans le "session storage" du navigateur et qu'on nomme "newOrder"
+        }) 
+        
 
 
 
-
-          /* --------------BOUTON AJOUT PANIER-------------- */
-const btnSubmit = document.querySelector('#btnBasket');
-
-btnSubmit.onclick = function(event) {
-    alert("Votre produit vient d'être ajouté au panier !");
-
-    
-btnSubmit.addEventListener('click', addProducts);
-
-let newCart = null;
-
-function createNewCart() {
-    let storageCart = localStorage.getItem('cart');
-    if (storageCart == null) {
-        newCart = []
-        console.log('Initialisation')
-        console.log('Création du panier !');
-    } else {
-        newCart = JSON.parse(storageCart)
-        console.log('Récupération')
-    }
-
-    localStorage.setItem('cart', JSON.stringify(newCart));
-
-}
-        };  
-    };
+    };  
 };
-
 
 
 
