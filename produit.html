@@ -11,7 +11,7 @@
 
 
 
-    <title>Vente d'appareils photos vintage | Orinco.fr</title>
+    <title>Produit | Orinco.fr</title>
     <meta name="description" content="">
 	<meta name="robots" content="index, follow">
 
@@ -25,7 +25,7 @@
         <a href="index.html" class="logo"> Orinco </a>
         <nav class="menu">
             <a href="index.html"> Accueil </a>
-            <a href="#"> Boutique </a>
+            <a href="index.html#produit"> Boutique </a>
             <a href="#"> Contactez-nous </a>
             <i class="fas fa-shopping-bag"></i>
             <a href="/panier.html"> Panier </a>
@@ -35,12 +35,28 @@
     <!-- Produit -->
     <section>
         <div id="productUnit" class="product">
-        <article class="article-product"></article>
-            <a id="btnBasket" class="btn btn-shopping" href="#" aria-label="">Sélectionner</a>    
-        </div> 
-        
+            <article class="productInfos productUnit">
+                <div id="bloc-produit">
+                    <p class="productId"></p>
+                    <h2 class="productName"><strong>Nom: </strong>${article.name}</h2>
+                    <p class="productPrice"><strong>Prix: </strong> ${article.price/100} €</p>
+                    <p class="productDescription"><strong>Description: </strong> ${article.description}</p>
+                    <p class="productLenses"><strong>Lenses: </strong> ${article.lenses}</p>
+                    <p id="productId"><strong>Id: </strong> ${article._id}</p>
+                    <form id="buttonAchat" action="">
+                        <label class="card__form--label" for="lenses"><strong>Choisir une lentilles : </strong> </label>
+                        <select id="lenses" class="card__form__select js-lensesSelectAllOption" aria-label="Sélectionner la lentille de votre choix">
+                            <option class="lenseSelect" value="">${article.lenses}</option>
+                        </select>
+                    </form>
+                        <a id="btnBasket" class="btn btn-shopping" href="" aria-label="">Sélectionner</a>
+                </div>
+                <div>
+                    <img id="ProductImg" src="" alt="">
+                </div>
+            </article>  
+        </div>     
     </section>
-
 
     <!-- FOOTER-->
     <footer class="footer">

@@ -114,27 +114,25 @@ a, a:hover {
     text-decoration: none;
 }
 .btn-shop:hover {
-    padding: 10px 33px;
+    padding: 10px 13px;
 
-    background: url(../img/shop.png) no-repeat;
     background-position: right;
     background-color: #deb853;
     color: rgba(10, 55, 58, 1);
 
     transition-property: padding;
-    transition-duration: .5s;
+    transition-duration: .1s;
     transition-timing-function: ease-in-out;
     opacity: O.5;
 }
 .btn-shopping:hover {
-    padding: 10px 30px;
+    padding: 10px 13px;
 
-    background: url(../img/shopping-bag.png) no-repeat;
     background-position: right;
     background-color: #deb853;
 
     transition-property: padding;
-    transition-duration: .5s;
+    transition-duration: .1s;
     transition-timing-function: ease-in-out;
     opacity: O.5;
 }
@@ -233,20 +231,33 @@ footer{
 
 
 /*-- page panier --*/
-table {
-    margin: 50px;
-    text-align: ;
-    border-collapse: collapse;
+main > #table {
+    margin: 0rem 0 0rem 10rem;
+    border-collapse: separate;
+    width: 80%;
+    border-spacing: 0;
+  }
+th {
+    border: 1px solid black;
 }
-td {
-    border: solid 1px black;
+
+#total{
+    margin: 0rem 0 0rem 10rem;
+    border-collapse: separate;
+    width: 80%;
+    border-spacing: 0;
 }
 
+.imagesPanier{
+    width: 10%;
+    max-width: 100%;
+    margin-top: -50 px;
+    float: left;
+}
 
-
-
-
-
+#removeBtn{
+    margin ;
+}
 
 
 

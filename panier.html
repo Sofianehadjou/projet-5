@@ -9,7 +9,7 @@
     <script type="module" src="/js/panier.js" defer></script>
 
 
-    <title>Vente d'appareils photos vintage | Orinco.fr</title>
+    <title>Panier | Orinco.fr</title>
     <meta name="description" content="">
 	<meta name="robots" content="index, follow">
 
@@ -23,7 +23,7 @@
         <a href="index.html" class="logo"> Orinco </a>
         <nav class="menu">
             <a href="index.html"> Accueil </a>
-            <a href="#"> Boutique </a>
+            <a href="index.html#produit"> Boutique </a>
             <a href="#"> Contactez-nous </a>
             <i class="fas fa-shopping-bag"></i>
             <a href="#"> Panier </a>
@@ -32,71 +32,20 @@
     
     <!-- Produit -->
     <main class="main-panier">
-
-        <div id="productUnit" class="product">
-            <article id="articlebasket">
-            
-            </article>
-                    
         </div> 
-        <table id="panier">
-            <thead>
-                <tr id="panier__commande">
-                    <td id="name">Article</td>
-                    <td id="price">Prix</td>
-                    <td id="lenses">Lentille</td>
-                    <td id="quantity">Quantité</td>
-                    <td id="totalPrice">Prix Total</td>
-                    <td id="deleteProduct">Supprimer le produit</td>
-                </tr>
-            </thead>
-            <tbody id="panier__body">
-            </tbody>
-            <tfoot id="prix__total">
-            </tfoot>
-        </table>
-        
-        <p>Sous total : <span class="subtotal"></span>€</p>
-        
-        <button id="confirm-command">Passer la commande</button>
-        <div>
-            <p>Informartions:</p>
-            <form action="" method="get" class="form-example">
-                <div class="form-example">
-                    <label for="name">nom: </label>
-                    <input type="text" name="familyname" id="familyname" required>
-                </div>
-                <div class="form-example">
-                    <label for="name">prénom: </label>
-                    <input type="text" name="lastname" id="lastname" required>
-                    </div>
-                <div class="form-example">
-                    <label for="email">Adresse mail: </label>
-                    <input type="email" name="email" id="email" required>
-                </div>
-                <div class="form-example">
-                    <label for="phone">Téléphone: </label>
-                    <input type="tel" name="number" id="phone" required>
-                </div>
-                <div class="form-example">
-                    <label for="Adresse">Votre adresse: </label>
-                    <input type="text" name="adresse" id="adresse" required>
-                </div>
-                <div class="form-example">
-                    <label for="zip">Code postal: </label>
-                    <input type="number" name="zip" id="zip" required>
-                </div>
-                <div class="form-example">
-                    <label for="city">Ville: </label>
-                    <input type="text" name="ville" id="ville" required>
-                </div>
-                <div class="form-example">
-                    <label for="contry">pays: </label>
-                    <input type="text" name="pays" id="pays" required>
-                </div>
-                <button type="submit" aria-label="">Acheter</button>
-            </form>    
+            <img class="imagesPanier" src="" >
+            <table id="table" class= "tableau">
+  
+            </table>
         </div>
+        <div >
+            <table id="total">
+                <th ></th>
+            </table>
+
+        </div>
+
+        
     </main>
 
     <!-- FOOTER-->

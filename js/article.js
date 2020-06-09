@@ -1,8 +1,5 @@
 //créer la variable pour l' Url d'api
 let requestURL = 'http://localhost:3000/api/cameras'; 
-
-var products = document.getElementById('products');
-
 var productUnit= document.getElementById('productUnit');
 
 
@@ -17,26 +14,25 @@ request.onreadystatechange = function() {
         var response =JSON.parse(this.responseText);
        for( let i = 0; i < response.length; i++) {
            let article = response[i]; 
-           console.log(article);
 
-// Ajouter le contenu au DOM:
-            products.innerHTML += `<article class="article">
-                <div id="productInfos">
-                    <div id="bloc-produit">
-                        <p class="productId"></p>
-                        <h2 class="productName"><strong>Nom: </strong>${response[i].name}</h2>
-                        <p class="productPrice"><strong>Prix: </strong> ${response[i].price/100} €</p>
-                        <p class="productDescription"><strong>Description: </strong> ${response[i].description}</p>
-                        <p classd="productLenses"><strong>Lenses: </strong> ${response[i].lenses}</p>
-                    </div>
-                    <div> 
-                        <img id="ProductImg" src="${response[i].imageUrl}" alt="">
-                    </div>
-                </div>
-                <a class="btn btn-shopping" href="produit.html?id=${response[i]._id}" aria-label="">Sélectionner</a>
-            </article>`;
+           var products = document.getElementById('products');
 
-    
+           // Ajouter le contenu au DOM:
+           products.innerHTML += `<article class="article">
+           <div id="productInfos">
+               <div id="bloc-produit">
+                   <p class="productId"></p>
+                   <h2 class="productName"><strong>Nom: </strong>${article.name}</h2>
+                   <p class="productPrice"><strong>Prix: </strong> ${article.price/100} €</p>
+                   <p class="productDescription"><strong>Description: </strong> ${article.description}</p>
+                   <p classd="productLenses"><strong>Lenses: </strong> ${article.lenses}</p>
+               </div>
+               <div> 
+                   <img id="ProductImg" src="${article.imageUrl}" alt="">
+               </div>
+           </div>
+           <a class="btn btn-shopping" href="produit.html?id=${article._id}" aria-label="">Sélectionner</a>
+       </article>`;
        };
     };
 };

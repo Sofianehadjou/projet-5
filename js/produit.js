@@ -21,7 +21,6 @@ request.onreadystatechange = function() {
         article =JSON.parse(this.responseText);
                
 // Ajouter le contenu au DOM:
-        name.innerHTML = ``;
         productUnit.innerHTML = `<article class="article-product">
             <div class="productInfos productUnit">
                 <div id="bloc-produit">
@@ -55,23 +54,20 @@ request.onreadystatechange = function() {
 
         submitBtn.addEventListener('click', function (event) {    // écoute de l'événement click, notre callback prend un paramètre que nous avons appelé event ici
             event.preventDefault(); // On utilise la fonction preventDefault de notre objet event pour empêcher le comportement par défaut de cet élément lors du clic de la souris
-            alert('${myArticle.name} a été bien ajouter au panier ')
+            alert('votre article a été bien ajouter au panier ')
 
-            let cart = localStorage.getItem('panier');
+            let cart = localStorage.getItem('panier'); // je récupère le local storage
             if (cart) {
-                cart = JSON.parse(cart);
+                cart = JSON.parse(cart); // je transforme le contenu JSON en JS
             } else {
-                cart = [];
+                cart = [];  //sinon créer un array vide
             }
     
-            cart.push(article);
-            localStorage.setItem("panier", JSON.stringify(cart));
-            
-            if (cart != null) {
-                let myArticleJSON = localStorage.getItem("panier");
-                console.log(myArticle);
-              }            
+            cart.push(article); // je push dedans un nouveau article
+            localStorage.setItem("panier", JSON.stringify(cart)); // je mets l'array en localStorage
+        
         
         }) 
     };  
 };
+
