@@ -12,18 +12,6 @@ const quantite = document.getElementById('quantity');
 const prixTotal = document.getElementById('totalPrice');
 const supprimeProduit = document.getElementById('deleteProduct');
 
- //création d'une classe qui repésente une ligne de panier 
-class lineCart {                             
-    constructor(Id, Name, Lense, Price, Qte) {
-        this.id = Id;
-        this.name = Name;
-        this.lense = Lense;
-        this.qte = Qte;
-        this.price = Price;
-        this.subtotal = parseInt(this.qte) * parseInt(this.price)
-    }
-}
-
 //recuperer les données de:
 
 const tableau = document.getElementById('table');
@@ -42,20 +30,16 @@ if(myArticleJSON != null){
         tableau.innerHTML += `<div id="productUnit" class="product">
     <article id="articlebasket">
         <table id="table">
-            <thead>
-                <tr>
-                    <th><img class="imagesPanier" src="${article.imageUrl}"> Article: ${article.name}</th>
-                    <th>Lentille: ${article.lenses}</th>
-                    <th>Prix: ${article.price/100} €</th>
-                    <th class="productQte">Quantité: 1</th>
-                </tr>
-            </thead>
-
             <tbody id="cart-tablebody">
-            
+                <tr>
+                    <td><img class="imagesPanier" src="${article.imageUrl}"> ${article.name}</th>
+                    <td> ${article.lenses}</th>
+                    <td> ${article.price/100} €</th> 
+                    <td> ${article.price/100 * article.quantity}  €</th>
+                    <td class="productQte"> ${article.quantity}</th>
+               </tr>
             </tbody>
         </table>
-
     </article>
     </div>`;
     
@@ -65,12 +49,12 @@ if(myArticleJSON != null){
     const totalCart = () => {
     let totalCount = 0; // je crée une variable initialiser à zéro
     for (let i in myArticle) { // pour chaque produit présent dans le panier
-        
-    let myArticleJSON = localStorage.getItem("panier");   // je récupère le price depuis le local storage
-    let myArticle = JSON.parse(myArticleJSON); // je le transforme en nombre
 
-    totalCount += myArticle[i].price/100; //je rajoute chaque produit à la variable totalCount
-  }
+        let myArticleJSON = localStorage.getItem("panier");   // je récupère le price depuis le local storage
+        let myArticle = JSON.parse(myArticleJSON); // je le transforme en nombre
+        totalCount += myArticle[i].price * myArticle[i].quantity /100; //je rajoute chaque produit à la variable totalCount
+    }
+  
   return totalCount; // totalCount me retourne la Somme de tous les price des produits
 
 };

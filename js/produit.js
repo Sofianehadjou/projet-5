@@ -30,7 +30,6 @@ request.onreadystatechange = function() {
                     <p class="productDescription"><strong>Description: </strong> ${article.description}</p>
                     <p class="productLenses"><strong>Lenses: </strong> ${article.lenses}</p>
                     <p id="productId"><strong>Id: </strong> ${article._id}</p>
-                    <p id="productQte"><strong>Quantité: </strong> </p>
 
 
                         <form id="buttonAchat" action="">
@@ -62,11 +61,23 @@ request.onreadystatechange = function() {
             } else {
                 cart = [];  //sinon créer un array vide
             }
-    
-            cart.push(article); // je push dedans un nouveau article
+
+
+            var index = cart.findIndex(_article => _article._id === article._id);
+            if (index > -1){
+                
+            /*    if (!cart[index].quantity){      
+                    cart[index].quantity = 0;
+                }
+            */
+                cart[index].quantity += 1;
+            } else {
+                article.quantity = 1;
+                cart.push(article); // je push dedans un nouveau article
+            }
+
             localStorage.setItem("panier", JSON.stringify(cart)); // je mets l'array en localStorage
-        
-        
+            
         }) 
     };  
 };
