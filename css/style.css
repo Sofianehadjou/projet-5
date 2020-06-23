@@ -103,11 +103,9 @@ a, a:hover {
     color: rgba(10, 55, 58, 1);
     font-size: 20px;
 
-
     padding: 10px 10px;
     margin-bottom: 15px;
     border-radius: 10px;
-
 
     border: none;
     text-align: center;
@@ -125,14 +123,30 @@ a, a:hover {
     transition-timing-function: ease-in-out;
     opacity: O.5;
 }
-.btn-shopping:hover {
-    padding: 10px 13px;
-
-    background-position: right;
+.btn-accueil, .btn-remove{
     background-color: #deb853;
+    color: rgba(10, 55, 58, 1);
+    font-size: 20px;
+
+    border-radius: 1px;
+
+    border: none;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.totalRemove{
+    margin-top: 100px;
+}
+
+
+.btn-accueil:hover, .btn-remove:hover {
+    color: #ffffff;
+    background-color: #c8d0df;
 
     transition-property: padding;
-    transition-duration: .1s;
+    transition-duration: .3s;
     transition-timing-function: ease-in-out;
     opacity: O.5;
 }
@@ -147,7 +161,7 @@ a, a:hover {
 /*--PRODUIT--*/
 
 .ligne-separatrice {
-    width: 30%;
+    width: 10%;
     height: 5px;
     border: none;
     box-shadow: none;
@@ -157,11 +171,11 @@ a, a:hover {
 .article {
     text-align: center;
     margin-top: 40px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
-    width: 80%;
+    box-shadow: 0 0 7px rgba(0, 0, 0, 0.4);
+    width: 60%;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 20px;
+    padding: 1rem;
     
     transform: scale(1);
     transition: transform 500ms ease-in-out;
@@ -180,9 +194,11 @@ a, a:hover {
     
 }
 
-.productUnit{
-    display: flex;
-    flex-direction: column-reverse;
+
+table ion-icon{
+    font-size: 25px;
+    color: #deb853;
+    cursor: pointer;
 }
 
 .produit {
@@ -190,13 +206,7 @@ a, a:hover {
     text-transform: uppercase;
 }
 
-.bloc-produit{
-    width: auto;
-}
 
-.bloc-produit p{
-    color: #000000;
-}
 #productInfos{
     display: flex;
 }
@@ -209,7 +219,7 @@ article span{
 }
 
 article img{
-    width: 50% ;
+    width: 100% ;
     max-width: 100%;
     height: auto;
     
@@ -227,44 +237,141 @@ footer{
 
 
 
+/*-Page produit-*/
+.banner-product{
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 100px;
+    top: 30%;
+    width: 100%;
+    text-align: center;   
+}
+
+.productUnit{
+    display: flex;
+}
+
+#bloc-produit{
+    text-align: justify;
+    margin-left: 2rem;
+    margin-right: 2rem;
+}
+.bloc-produit p{
+    color: #000000;
+}
+
+.btn-produit{
+    margin: 2rem;
+}
 
 
 
 /*-- page panier --*/
-main > #table {
-    margin: 0rem 0 0rem 10rem;
-    border-collapse: separate;
-    width: 80%;
-    border-spacing: 0;
-  }
-th {
-    border: 1px solid black;
+.main-panier {
+    width: 60%;
+    
 }
 
-#total{
-    margin: 0rem 0 0rem 10rem;
+
+#table, #total {
     border-collapse: separate;
-    width: 80%;
+    width: 100%;
     border-spacing: 0;
+    border: solid 2px #c8d0df;
+  } 
+th, td {
+    border: solid 1px #c8d0df;
+    padding: 10;
 }
 
 .imagesPanier{
-    width: 10%;
+    width: 20%;
     max-width: 100%;
-    margin-top: -50 px;
     float: left;
 }
 
-#removeBtn{
-    margin ;
+.icon-inner{
+    margin-top: 5px;
+}
+
+.totalRemove{
+    margin: 2rem;
+}
+
+
+
+/*-- Page confirmation--*/
+.footer__confirmation{
+    margin-top: 470px;
+}
+
+#error{
+    font-size: larger;
+    color: brown;
+}
+.img-confirmation {
+    width: 100%;
+    max-width: 100%;
 }
 
 
 
 
+#main #textForm {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  #main #textForm::before {
+    border-top: solid 2px #b6b6b6;
+    content: "";
+    display: inline-block;
+    width: 20%;
+    margin: 0 0 1rem 0;
+  }
+  #main #form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2rem;
+    width: 100%;
+  }
+  #main #form input {
+    width: 90%;
+    height: 2rem;
+    border: solid #deb853 2px;
+    margin: 2rem 0 0 0;
+  }
+  @media all and (min-width: 981px) {
+    #main #form {
+      width: 80%;
+      margin: auto 10%;
+    }
+  }
+  #main #form textarea {
+    width: 90%;
+    margin: 2rem 0 0 0;
+    border: solid #deb853 2px;
+  }
+  #main #form  #submit {
+    width: 50%;
+    border: none;
+    height: auto;
+    margin: 2rem 0 2rem 0;
+    line-height: 3.25rem;
+    background-color: #deb853;
+    transition: background-color 200ms ease-in-out;
+    cursor: pointer;
+  }
+  #main #form #submit:hover {
+    background-color: #c8d0df;
+    color: #ffffff;
+  }
 
-@media only screen and (min-width: 768){
+
+    @media only screen and (min-width: 768){
 
 
-}
-
+    }
+    

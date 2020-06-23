@@ -30,23 +30,74 @@
         </nav>
     </header>
     
+        <!-- Bannière -->
+        <section class="banner">
+            <div class="ban">
+                <img src="images/appareil-photo-vintage-orinco.jpg" alt="Bannière du site appareil photo vintage -orinco">
+            </div>
+            <div class="inner-banner">
+                <h1>VOTRE PANIER</h1>
+                <p>Retrouvez sur <strong>Orinco</strong> les meilleurs appareils photos vintage</p>
+            </div>
+        </section>
+    
     <!-- Produit -->
-    <main class="main-panier">
-        </div> 
+    <main id="main" class="main-panier">
+        </div > 
             <img class="imagesPanier" src="" >
             <table id="table" class= "tableau">
-  
+                <caption>Résumé de votre panier</caption>
+                <thead>
+                    <tr>
+                        <th>ARTICLE:</th>
+                        <th>LENTILLE: </th>
+                        <th>PRIX UNITAIRE: </th>
+                        <th>PRIX TOTAL: </th>
+                        <th>QUANTITE: </th>
+                    </tr>
+                </thead>
             </table>
         </div>
+
         <div >
             <table id="total">
-                <th ></th>
             </table>
+        </div>
+        <div class="totalRemove">
+            <a id="removeBtn" class="btn btn-remove" href="" aria-label="">Vider le panier</a>
+            <a class="btn btn-accueil" href="index.html" aria-label=""> Continuez vos achats </a>
 
         </div>
+
+
+        <p id="textForm">
+            Pour valider votre commande merci de remplir le formulaire :
+            <br>
+           <span>(* : champ obligatoire)</span>
+        </p>
+        
+        <form id="form">
+            <label for="firstname" ></label>
+            <input type="text" name="firstname" id="firstname" placeholder="Prénom*" required maxlength="50" pattern="[^0-9]*">
+            <br>
+            <label for="lastname"></label>
+            <input type="text" name="secondname" id="lastname" placeholder="Nom*" required maxlength="50" pattern="[^0-9]*">
+            <br>
+            <label for="address"></label>
+            <textarea name="address" id="address" cols="25" rows="3" placeholder="Adresse*" required maxlength="500" ></textarea>
+            <br>
+            <label for="city"></label>
+            <input type="text" name="town" id="city" placeholder="Ville*" required maxlength="100" pattern="[^0-9]*">
+            <br>
+            <label for="email"></label>
+            <input type="email" name="email" id="email" placeholder="Email*" maxlength="50" required>
+            <br>
+            <button type="submit" id="submit">Envoyer</button>
+        </form>
 
         
     </main>
+    <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
 
     <!-- FOOTER-->
     <footer class="footer">

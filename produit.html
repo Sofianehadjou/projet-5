@@ -31,25 +31,34 @@
             <a href="/panier.html"> Panier </a>
         </nav>
     </header>
-    
+    <!-- Bannière -->
+    <section class="banner-product">
+        <div class="ban">
+            <img src="" alt="">
+        </div>
+        <div class="">
+            <h1>Description produit</h1>
+            <p>Retrouvez sur <strong>Orinco</strong> les meilleurs appareils photos vintage</p>
+        </div>
+    </section>
     <!-- Produit -->
     <section>
         <div id="productUnit" class="product">
             <article class="productInfos productUnit">
                 <div id="bloc-produit">
                     <p class="productId"></p>
-                    <h2 class="productName"><strong>Nom: </strong>${article.name}</h2>
-                    <p class="productPrice"><strong>Prix: </strong> ${article.price/100} €</p>
-                    <p class="productDescription"><strong>Description: </strong> ${article.description}</p>
-                    <p class="productLenses"><strong>Lenses: </strong> ${article.lenses}</p>
-                    <p id="productId"><strong>Id: </strong> ${article._id}</p>
+                    <h2 class="productName"><strong>Nom: </strong></h2>
+                    <p class="productPrice"><strong>Prix: </strong> </p>
+                    <p class="productDescription"><strong>Description: </strong> </p>
+                    <p class="productLenses"><strong>Lenses: </strong> </p>
+                    <p id="productId"><strong>Id: </strong> </p>
                     <form id="buttonAchat" action="">
                         <label class="card__form--label" for="lenses"><strong>Choisir une lentilles : </strong> </label>
                         <select id="lenses" class="card__form__select js-lensesSelectAllOption" aria-label="Sélectionner la lentille de votre choix">
                             <option class="lenseSelect" value="">${article.lenses}</option>
                         </select>
                     </form>
-                        <a id="btnBasket" class="btn btn-shopping" href="" aria-label="">Sélectionner</a>
+                        <a id="btnBasket" class="btn btn-accueil btn-produit" href="" aria-label="">Sélectionner</a>
                 </div>
                 <div>
                     <img id="ProductImg" src="" alt="">

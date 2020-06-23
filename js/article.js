@@ -14,7 +14,7 @@ request.onreadystatechange = function() {
         var response =JSON.parse(this.responseText);
        for( let i = 0; i < response.length; i++) {
            let article = response[i]; 
-
+console.log(article)
            var products = document.getElementById('products');
 
            // Ajouter le contenu au DOM:
@@ -26,12 +26,13 @@ request.onreadystatechange = function() {
                    <p class="productPrice"><strong>Prix: </strong> ${article.price/100} €</p>
                    <p class="productDescription"><strong>Description: </strong> ${article.description}</p>
                    <p classd="productLenses"><strong>Lenses: </strong> ${article.lenses}</p>
+                   <a class="btn btn-accueil" href="produit.html?id=${article._id}" aria-label="">Sélectionner</a>
                </div>
                <div> 
                    <img id="ProductImg" src="${article.imageUrl}" alt="">
                </div>
            </div>
-           <a class="btn btn-shopping" href="produit.html?id=${article._id}" aria-label="">Sélectionner</a>
+           
        </article>`;
        };
     };
