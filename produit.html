@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
     <script src="https://kit.fontawesome.com/40649c36d5.js" crossorigin="anonymous"></script>
     
 
@@ -44,33 +45,34 @@
     <!-- Produit -->
     <section>
         <div id="productUnit" class="product">
-            <article class="productInfos productUnit">
-                <div id="bloc-produit">
-                    <p class="productId"></p>
-                    <h2 class="productName"><strong>Nom: </strong></h2>
-                    <p class="productPrice"><strong>Prix: </strong> </p>
-                    <p class="productDescription"><strong>Description: </strong> </p>
-                    <p class="productLenses"><strong>Lenses: </strong> </p>
-                    <p id="productId"><strong>Id: </strong> </p>
-                    <form id="buttonAchat" action="">
-                        <label class="card__form--label" for="lenses"><strong>Choisir une lentilles : </strong> </label>
-                        <select id="lenses" class="card__form__select js-lensesSelectAllOption" aria-label="Sélectionner la lentille de votre choix">
-                            <option class="lenseSelect" value="">${article.lenses}</option>
-                        </select>
-                    </form>
-                        <a id="btnBasket" class="btn btn-accueil btn-produit" href="" aria-label="">Sélectionner</a>
-                </div>
-                <div>
-                    <img id="ProductImg" src="" alt="">
-                </div>
-            </article>  
+
+        </div>
+        <div id="addToCart">
+            <h1>Votre produit à été ajouté au panier </h1>
+            <div>
+                <a class="btn btn-accueil btn-produit" href="/index.html" aria-label="">CONTINUER MES ACHATS</a>
+                <a class="btn btn-accueil btn-produit" href="/panier.html" aria-label="">CONTINUER VERS MON PANIER</a>
+            </div>
+    
         </div>     
     </section>
 
     <!-- FOOTER-->
     <footer class="footer">
-        <p>Orinco.fr| Vente d'appareils photos vintage <br>Copyright © 2020 Tous droits réservés.</p>
-        
+        <div>
+            <div>
+                <ion-icon name="logo-facebook"></ion-icon>
+            </div>
+            <div>
+                <ion-icon name="logo-instagram"></ion-icon>
+            </div>
+            <div>
+                <ion-icon name="logo-twitter"></ion-icon>
+            </div>
+        </div>
+        <div>
+            <p>Orinco.fr| Vente d'appareils photos vintage <br>Copyright © 2020 Tous droits réservés.</p>
+        </div>
     </footer>
     <script type="module" src="js/produit.js"></script>
         

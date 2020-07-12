@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
     <script src="https://kit.fontawesome.com/40649c36d5.js" crossorigin="anonymous"></script>
     <script type="module" src="js/article.js" defer></script>
 
@@ -20,7 +21,7 @@
         <a href="index.html" class="logo"> Orinco </a>
         <nav class="menu">
             <a href="index.html"> Accueil </a>
-            <a href="#produit"> Boutique </a>
+            <a href="#produit" class="produit-lien"> Boutique </a>
             <a href="#"> Contactez-nous </a>
             <i class="fas fa-shopping-bag"></i>
             <a href="/panier.html"> Panier </a>
@@ -35,7 +36,7 @@
         <div class="inner-banner">
             <h1>Appareils photos vintage</h1>
             <p>Retrouvez sur <strong>Orinco</strong> les meilleurs appareils photos vintage</p>
-            <button class="btn btn-shop"> Boutique </button>
+            <a class="btn btn-accueil" href="index.html#produit"> Boutique </a>
         </div>
     </section>
 
@@ -50,7 +51,20 @@
 
     <!-- FOOTER-->
     <footer class="footer">
-        <p>Orinco.fr| Vente d'appareils photos vintage <br>Copyright © 2020 Tous droits réservés.</p>
+        <div>
+            <div>
+                <ion-icon name="logo-facebook"></ion-icon>
+            </div>
+            <div>
+                <ion-icon name="logo-instagram"></ion-icon>
+            </div>
+            <div>
+                <ion-icon name="logo-twitter"></ion-icon>
+            </div>
+        </div>
+        <div>
+            <p>Orinco.fr| Vente d'appareils photos vintage <br>Copyright © 2020 Tous droits réservés.</p>
+        </div>
         
     </footer>
 

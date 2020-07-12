@@ -1,16 +1,18 @@
 {
   "name": "orinoco-backend",
   "version": "1.0.0",
-  "description": "",
+  "description": "This is the back end server for Project 5 of the Junior Web Developer path.",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "NODE_ENV=test mocha --compilers js:babel-core/register --require ./test/unit/test_helper.js  --recursive test/**/*_spec.js",
+    "start": "node server.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^3.0.8",
     "body-parser": "^1.18.3",
+    "chai-as-promised": "^7.1.1",
     "express": "^4.16.4",
     "jsonwebtoken": "^8.3.0",
     "mongoose": "^5.3.8",
@@ -18,6 +20,16 @@
     "uuid": "^3.3.2"
   },
   "devDependencies": {
-    "babel-plugin-transform-export-extensions": "^6.22.0"
-  }
+    "babel-plugin-transform-export-extensions": "^6.22.0",
+    "chai": "^4.2.0",
+    "mocha": "^8.0.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sofianehadjou/projet-5.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Sofianehadjou/projet-5/issues"
+  },
+  "homepage": "https://github.com/Sofianehadjou/projet-5#readme"
 }

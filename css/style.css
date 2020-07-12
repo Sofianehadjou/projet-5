@@ -230,11 +230,30 @@ article img{
 footer{
     background-color: #deb853;
     color: rgba(10, 55, 58, 1);
-    height: 80px;
+    height: 125px;
     text-align: center;
 }
+footer div{
+    display: flex;
+    justify-content: center;
+}
+ion-icon{
+    font-size: 30px;
+    margin: 5px;
+    color: #000000;
+}
+ion-icon:hover{
+    font-size: 33px;
+}
 
-
+/*-- Page article --*/
+productPrice{
+    background-color: #deb853;
+    color: black;
+    width: 100%;
+    max-width: 100%;
+    display: inline-flex;
+}
 
 
 /*-Page produit-*/
@@ -263,8 +282,30 @@ footer{
 .btn-produit{
     margin: 2rem;
 }
+.btn-produit{
+    font-size: 15px;
+    margin-left: 10px;
 
+}
 
+#addToCart {
+    width: 30%;
+    height: 300px;
+    background-color: #fafafa;
+    margin: 0 auto;
+    padding-top: 80px;
+    text-align: center;
+    box-shadow: 0 0 7px rgba(0, 0, 0, 0.4);
+    position: absolute;
+    top: -400px;
+    left: 35%;
+    transition: 0.5s ease-in-out;
+}
+#addToCart > div {
+    display: flex;
+    flex-direction: column;
+    
+}
 
 /*-- page panier --*/
 .main-panier {
@@ -375,3 +416,55 @@ th, td {
 
     }
     
+    @media all and (max-width: 992px){ 
+        body{
+            margin: auto;
+            width: auto;
+            text-align: center;
+        }
+        .header{
+            width: auto;
+        }
+        nav{
+            width: auto;
+        }
+        nav > .produit-lien {
+            display: none;
+        }
+
+        .ban {
+            width: auto;
+        }    
+        .inner-banner > h1 {
+            font-size: 2rem;
+        }
+        .inner-banner > button {
+            display: none;
+        }
+
+        main{
+            margin: auto;
+        }
+        table{
+            margin: auto;
+            display: flex;   
+        }
+        thead tr {
+            display: flex;
+        }
+
+        #productInfos{
+            display: flex;
+            flex-direction: column-reverse;
+        }
+
+        article img{
+            width: 100% ;
+            max-width: 100%;            
+        }
+
+        footer{
+            margin-top: 20px;
+        }
+        
+    }
