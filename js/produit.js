@@ -1,23 +1,36 @@
-import {getRequestOrder} from '../js/main.js'  //import de la function pour appeler l'api
 //créer la variable pour l' Url d'api
 let requestURL = 'http://localhost:3000/api/cameras/' + window.location.search.substr(1).split("=")[1];
-//récupération des éléments du DOM.
-const productUnit = document.getElementById('productUnit');
-var article = undefined;
 
-//recuperer les données de l'API:
-var request = new XMLHttpRequest();   //Lig on crée un nouvel objet qui correspond à notre objet AJAX. C'est grâce à lui qu'on va créer et envoyer notre requête ;
-request.open("GET", requestURL, true);
-request.send();
-request.onreadystatechange = function() {
-    if (this.readyState == XMLHttpRequest.DONE && this.status == 200) {
-        article =JSON.parse(this.responseText);
-        console.log(article)
-        for (let i = 0; i < article.lenses.length; i++) {
-            const lenseOption = article.lenses[i];
-            console.log(article.lenses[i])
-               
+// REQUETTE APPEL API un produit unique, la requête contient une promesse
+let requestUrlOrder = 'http://localhost:3000/api/cameras/' + window.location.search.substr(1).split("=")[1];
+export const getRequestOrder = function (url) {
+    return new Promise(function (resolve, reject) { // Cette fonction retournera une promesse qui fera :
+        var request = new XMLHttpRequest();  //créer un nouvel objet qui correspond à notre objet AJAX. C'est grâce à lui qu'on va créer et envoyer notre requête ;
+        request.onreadystatechange =  function() {
+            if (this.readyState === 4){
+                if (this.status == 200) {
+                    let article = JSON.parse(this.responseText);
+                    if (article){
+                        resolve(article);
+                    } else {
+                        reject("l'api ne retourne aucun produit");
+                    }
+                } else {
+                    reject(request) // Si une erreur lors de l'accès à l'API a eu lieu, il faut traiter l'erreur
+                    console.log("reject")
+                }
+            } 
+        }    
+        request.open("GET", requestURL, true);   //Création et configuration d'une requête HTTP
+        request.send(); // Envoi de la requête en y incluant l'objet
+    });
+};         
 // Ajouter le contenu au DOM:
+let apiResponse =  getRequestOrder(); //appeler la promesse(requete)
+apiResponse.then(function (article) {
+    for (let i = 0; i < article.lenses.length; i++) {
+        const lenseOption = article.lenses[i];
+        const productUnit = document.getElementById('productUnit');
         productUnit.innerHTML = `<article class="article-product">
             <div class="productInfos productUnit">
                 <div>
@@ -70,9 +83,9 @@ request.onreadystatechange = function() {
                 }
             };
             CartQuantity() // j'appelle la fonction.
-            localStorage.setItem("panier", JSON.stringify(cart)); // je mets l'array en localStorage     
-                
+            localStorage.setItem("panier", JSON.stringify(cart)); // je mets l'array en localStorage            
         });
-    };  
-};
-};
+    };
+}).catch(function(request){
+    console.log("erreur")
+});

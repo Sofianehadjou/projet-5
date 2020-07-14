@@ -1,6 +1,4 @@
 import {getRequest} from '../js/main.js'  //import de la function pour appeler l'api
-let requestURL = 'http://localhost:3000/api/cameras';//Url de l'API
-
 // Ajouter le contenu au DOM:
 let apiResponse =  getRequest(); //appeler la promesse(requete)
 apiResponse.then(function (articles) {
