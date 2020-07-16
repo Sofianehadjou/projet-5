@@ -9,7 +9,6 @@ apiResponse.then(function (articles) {
         <article class="article">
             <div id="productInfos">
                 <div id="bloc-produit">
-                    <p class="productId"></p>
                     <h2 class="productName"><strong>Nom: </strong>${article.name}</h2>
                     <p class="productPrice"><strong>Prix: </strong> ${article.price/100} €</p>
                     <p class="productDescription"><strong>Description: </strong> ${article.description}</p>
