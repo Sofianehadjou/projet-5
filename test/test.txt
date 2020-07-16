@@ -1,0 +1,5 @@
+# tests # => framework Mocha 
+ 
+# installation de manière globale : npm install mocha -g.
+# installation dans le projet : npm i mocha --saved.  npm i mocha --save-dev.
+

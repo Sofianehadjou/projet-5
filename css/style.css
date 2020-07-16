@@ -1,7 +1,6 @@
 @charset "UTF-8"
 /*Couleur-jaune-moutarde: #deb853 */
 /* color-txt bleu vintage: rgba(10, 55, 58, 1); */
-
 body, html {
     margin: 0px;
     padding: 0px;
@@ -104,51 +103,27 @@ a, a:hover {
     font-size: 20px;
 
     padding: 10px 10px;
-    margin-bottom: 15px;
-    border-radius: 10px;
 
     border: none;
     text-align: center;
     text-decoration: none;
 }
-.btn-shop:hover {
-    padding: 10px 13px;
 
-    background-position: right;
-    background-color: #deb853;
-    color: rgba(10, 55, 58, 1);
-
-    transition-property: padding;
-    transition-duration: .1s;
-    transition-timing-function: ease-in-out;
-    opacity: O.5;
-}
 .btn-accueil, .btn-remove{
-    background-color: #deb853;
-    color: rgba(10, 55, 58, 1);
-    font-size: 20px;
-
     border-radius: 1px;
-
-    border: none;
-    text-align: center;
-    text-decoration: none;
     font-weight: bold;
     text-transform: uppercase;
-}
-.totalRemove{
-    margin-top: 100px;
-}
+    transition: background-color 200ms ease-in-out;
 
+}
 
 .btn-accueil:hover, .btn-remove:hover {
     color: #ffffff;
     background-color: #c8d0df;
+}
 
-    transition-property: padding;
-    transition-duration: .3s;
-    transition-timing-function: ease-in-out;
-    opacity: O.5;
+.totalRemove{
+    margin-top: 100px;
 }
 
 /*--Main--*/
@@ -171,6 +146,7 @@ a, a:hover {
 .article {
     text-align: center;
     margin-top: 40px;
+    margin-bottom: 1rem;
     box-shadow: 0 0 7px rgba(0, 0, 0, 0.4);
     width: 60%;
     margin-left: auto;
@@ -281,11 +257,8 @@ productPrice{
 
 .btn-produit{
     margin: 2rem;
-}
-.btn-produit{
     font-size: 15px;
     margin-left: 10px;
-
 }
 
 #addToCart {
@@ -297,7 +270,7 @@ productPrice{
     text-align: center;
     box-shadow: 0 0 7px rgba(0, 0, 0, 0.4);
     position: absolute;
-    top: -400px;
+    top: -4000px;
     left: 35%;
     transition: 0.5s ease-in-out;
 }
@@ -312,8 +285,6 @@ productPrice{
     width: 60%;
     
 }
-
-
 #table, #total {
     border-collapse: separate;
     width: 100%;
@@ -339,7 +310,50 @@ th, td {
     margin: 2rem;
 }
 
-
+/*panier form*/
+#form-validation {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+#form-validation::before {
+    display: inline-block;
+    width: 20%;
+    margin: 0 0 1rem 0;
+  }
+ #form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2rem;
+    width: 100%;
+  }
+#form input {
+    width: 90%;
+    height: 2rem;
+    border: solid #deb853 2px;
+    margin: 2rem 0 0 0;
+  }
+#form textarea {
+    width: 90%;
+    margin: 2rem 0 0 0;
+    border: solid #deb853 2px;
+  }
+#form  #submit {
+    width: 50%;
+    border: none;
+    height: auto;
+    margin: 2rem 0 2rem 0;
+    line-height: 3.25rem;
+    background-color: #deb853;
+    transition: background-color 200ms ease-in-out;
+    cursor: pointer;
+  }
+#form #submit:hover {
+    background-color: #c8d0df;
+    color: #ffffff;
+  }
 
 /*-- Page confirmation--*/
 .footer__confirmation{
@@ -354,68 +368,23 @@ th, td {
     width: 100%;
     max-width: 100%;
 }
+.btn-confirmation{
+    margin: 2rem;
+}
 
-
-
-
-#main #textForm {
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  #main #textForm::before {
-    border-top: solid 2px #b6b6b6;
-    content: "";
-    display: inline-block;
-    width: 20%;
-    margin: 0 0 1rem 0;
-  }
-  #main #form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+#total{
     margin-bottom: 2rem;
-    width: 100%;
-  }
-  #main #form input {
-    width: 90%;
-    height: 2rem;
-    border: solid #deb853 2px;
-    margin: 2rem 0 0 0;
-  }
+}
+
+
   @media all and (min-width: 981px) {
     #main #form {
       width: 80%;
       margin: auto 10%;
     }
   }
-  #main #form textarea {
-    width: 90%;
-    margin: 2rem 0 0 0;
-    border: solid #deb853 2px;
-  }
-  #main #form  #submit {
-    width: 50%;
-    border: none;
-    height: auto;
-    margin: 2rem 0 2rem 0;
-    line-height: 3.25rem;
-    background-color: #deb853;
-    transition: background-color 200ms ease-in-out;
-    cursor: pointer;
-  }
-  #main #form #submit:hover {
-    background-color: #c8d0df;
-    color: #ffffff;
-  }
+  
 
-
-    @media only screen and (min-width: 768){
-
-
-    }
-    
     @media all and (max-width: 992px){ 
         body{
             margin: auto;
@@ -445,26 +414,76 @@ th, td {
         main{
             margin: auto;
         }
-        table{
-            margin: auto;
-            display: flex;   
+        .main-panier{
+            width: 100%;
         }
-        thead tr {
-            display: flex;
-        }
-
+    
         #productInfos{
             display: flex;
             flex-direction: column-reverse;
+        }
+        .productUnit{
+            display: block;
+        }
+        #addToCart{
+            margin: auto;
+            width: auto;
+            padding: auto;
         }
 
         article img{
             width: 100% ;
             max-width: 100%;            
         }
+        #bloc-produit{
+            margin: auto;
+        }
 
         footer{
             margin-top: 20px;
         }
-        
+        table {
+            display:flex;
+        }
+        thead {
+            width:20%;
+            min-width:90px;
+        }
+        tbody {
+            flex:1;
+        }
+        tr {
+            display:flex;
+            flex-direction:column;
+        }
+        th, td {
+            text-align:left;
+            border-right:0;
+            border-bottom:1px solid black;
+        }
+        tr:last-child td:last-child {
+            border-bottom:0;
+        }
+        tbody tr:not(:first-child) td::before {
+            position:absolute;
+            content:'Pseudo';
+            color:white;
+            font-weight:bold;
+            width:calc(20% - 13px);
+            min-width:90px;
+            padding:5px;
+            border-bottom:1px solid black;
+            margin-left:calc(-20% - 2px);
+            margin-top:-5px;
+        }
+        tbody tr:last-child td:last-child::before {
+            border-bottom:0;
+        }
+        tbody tr:not(:first-child) td:nth-of-type(2)::before {
+            content:'Age';
+        }
+        tbody tr:not(:first-child) td:nth-of-type(3)::before {
+            content:'Classement';
+        }
+    
     }

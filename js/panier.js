@@ -100,16 +100,13 @@ submit.addEventListener('submit', function (event){
         }
         //création de l'array produit
         const products = [];
-        console.log(products)
 
-        
         // si le local storage existe
         if (localStorage.getItem("panier")) {
             for (let i in myArticle){            
                 let idProducts = myArticle[i]._id;
                 products.push(idProducts);
                 localStorage.setItem("productsID", products);        
-                console.log(myArticle);
             }
         }
         //création de l'objet order:
@@ -119,21 +116,30 @@ submit.addEventListener('submit', function (event){
         }
         //creation de la requete POST pour envoyer au serveur.
         const send = () => {
-            let request = new XMLHttpRequest();
+            return new Promise(function (resolve, reject) { // Cette fonction retournera une promesse qui fera :
+                let request = new XMLHttpRequest();
+                //attente reponse et appel fonction de retour
+                request.onreadystatechange = function () {
+                    if (this.readyState == XMLHttpRequest.DONE && this.status == 201) {
+                        let response = JSON.parse(this.responseText);
+                        resolve(response);
+                        console.log(resolve)
+                        localStorage.setItem("order", JSON.stringify(response));
+                        location.href = "confirmation.html";
+                    } else {
+                        reject(Request);
+                        console.log("reject");
+
+                    }
+                };
             request.open("POST", "http://localhost:3000/api/cameras/order");
             request.setRequestHeader("Content-Type", "application/json");
             request.send(JSON.stringify(order));
-            //attente reponse et appel fonction de retour
-            request.onreadystatechange = function () {
-                if (this.readyState == XMLHttpRequest.DONE && this.status == 201) {
-                    let response = JSON.parse(this.responseText);
-                    localStorage.setItem("order", JSON.stringify(response));
-                    location.href = "confirmation.html"; 
-                }
-            };
-        };
+            });
+        };    
         send(); // appeler la fonction 
     } else {
+        event.preventDefault();        
         alert("veuillez ajouter un produit au panier");
     }
 });
