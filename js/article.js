@@ -1,4 +1,5 @@
-import {getRequest} from '../js/main.js'  //import de la function pour appeler l'api
+//import de la function pour appeler l'api
+import {getRequest} from "../js/main.js";  
 // Ajouter le contenu au DOM:
 let apiResponse =  getRequest(); //appeler la promesse(requete)
 apiResponse.then(function (articles) {
@@ -21,6 +22,6 @@ apiResponse.then(function (articles) {
             </div>       
         </article>`;
     }     
-}).catch(function(request){
+}).catch(function(request){   //si la promesse est rejetée.
     console.log("erreur")
 });

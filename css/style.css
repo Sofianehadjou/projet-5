@@ -1,4 +1,3 @@
-@charset "UTF-8"
 /*Couleur-jaune-moutarde: #deb853 */
 /* color-txt bleu vintage: rgba(10, 55, 58, 1); */
 body, html {
@@ -293,7 +292,7 @@ productPrice{
   } 
 th, td {
     border: solid 1px #c8d0df;
-    padding: 10;
+    padding: 10px;
 }
 
 .imagesPanier{
@@ -428,7 +427,6 @@ th, td {
         #addToCart{
             margin: auto;
             width: auto;
-            padding: auto;
         }
 
         article img{

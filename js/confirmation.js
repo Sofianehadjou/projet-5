@@ -1,4 +1,6 @@
-import { totalCart } from './main.js';
+//import de la fonction TotalCart.
+import { totalCart } from "./main.js";
+//déclarations des variables
 const confirmation = document.getElementById('confirmation');
 const confirmationError = document.getElementById('error');
 const table = document.getElementById('tableConfirmation');
@@ -45,7 +47,7 @@ if (myArticleJSON !== null) {
 
 //appeler la fonction pour ajouter la somme total du panier.
 const resultTotalCart = totalCart();
-const total = document.getElementById('total')
+const total = document.getElementById('total');
 const showTotalCart = () => {
     if (myArticleJSON != null){
         total.innerHTML = `<div>
