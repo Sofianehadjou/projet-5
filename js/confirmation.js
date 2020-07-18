@@ -23,7 +23,7 @@ if (myArticleJSON !== null) {
             <h2>Résumé de votre commande</h2>
         </div>`;
         table.innerHTML += `<article>
-            <table id="tableConfirmation">
+            <table id="table">
                 <thead>
                     <tr>
                         <th>ARTICLE:</th>
@@ -31,10 +31,10 @@ if (myArticleJSON !== null) {
                         <th>QUANTITE</th>
                     </tr>
                     <tr>
-                    <td><img class="imagesPanier" src="${element.imageUrl}"> ${element.name}</th>
-                    <td> ${element.price/100} €</th> 
-                    <td> ${myArticle[i].quantity}</th>                
-                </tr>
+                        <td><img class="imagesPanier" src="${element.imageUrl}"> ${element.name}</th>
+                        <td> ${element.price/100} €</th> 
+                        <td> ${myArticle[i].quantity}</th>                
+                    </tr>
                 </thead>
             </table>
         </article>`;
